@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" pref="1098" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="485" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Commands Syntax:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <Properties>
+        <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Monospaced" size="14" style="0"/>
+            </Property>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Command List:--------------------------------------------------------------------------------&#xa;&#xa;//Refreshes Arduino Data Connection&#xa;- connected&#xa;&#xa;//Enter a number from 0 - 100 in increments of 5 ex:[CMDSET]SetPlant1Value=35&#xa;- [CMDSET]SetPlant1Value=&#xa;- [CMDSET]SetPlant2Value=&#xa;- [CMDSET]SetPlant3Value=&#xa;- [CMDSET]SetPlant4Value=&#xa;&#xa;//Enter a number from 0 - 100 in increments of 5 ex:[CMDSET]SetPlant1EndPoint=35&#xa;- [CMDSET]SetPlant1Endpoint=&#xa;- [CMDSET]SetPlant2Endpoint=&#xa;- [CMDSET]SetPlant3Endpoint=&#xa;- [CMDSET]SetPlant4Endpoint=&#xa;&#xa;//Enables or Disables the plant args: 1 = Enabled. 0 = Disabled  ex: nt1Enabled=1&#xa;- [CMDSET]isPlant1Enabled=&#xa;- [CMDSET]isPlant2Enabled=&#xa;- [CMDSET]isPlant3Enabled=&#xa;- [CMDSET]isPlant4Enabled=&#xa;&#xa;//Manual Control Commands will not be implemented do to fail safe concirns.&#xa;&#xa;Notes: -----------------------------------------------------------------------------------------&#xa;- Plant Setpoint must be set below Plant Endpoint. The system will water the plant once the moisture content&#xa;drops below the Setpoint and will stop watering the plant once the moisture content reaches the Endpoint. Setting&#xa;the Setpoint to 0 will prevent the plant from being watered.&#xa;&#xa;- If the data being recieved from the Arduino seems out of Sync or not fully loaded on startup, you can type &#xa;&quot;connected&quot; into the console to Re-Sync the settings. You may also go to File&gt;Re-Sync Arduino to do this.&#xa;&#xa;- All commands listed above are CASE sensitive. Improper command formatting will yeild no results.&#xa;&#xa;- There is NOTHING stoping the system from watering constantly. Your points must be set correctly for the &#xa;system to stop watering the plants. Upon first use, it is reccomended to closely monitor your plants to avoid &#xa;flooding. Keep your Arduino in a water tight container away from the pump to avoid damaging your board from flooding&#xa;if flooding may occur.&#xa;&#xa;Setpoint SET and Endpoint SET procedure:----------------------------------------------&#xa;- Water your plant manually for the first time. Install your Arduino setup leaving all plants disabled.&#xa;Once your plant is watered to your desired moisture content. Take note of the moisture reading on the display.&#xa;This moisture reading on the display will be your Endpoint. (Point when watering ends) &#xa;Wait until the plant needs watering and take note of the moisture content. That moisture content is your Setpoint. After you&#xa;set the Setpoint and the Endpoint in the control panel, Enable your plant, the system will start watering your plants.&#xa;&#xa;Seting up your watering system&apos;s sensors:-----------------------------------------------&#xa;- On the sensor, there is a white line. This white line indicates your depth limit. If you push the sensor into the&#xa;soil past that mark, your sensor will not read correctly. It is important that the top of the sensor (Circuitry)&#xa;does not get wet during the watering process. If so, the sensor will read 100% until dry. There are several solutions for&#xa;preventing your sensors from getting wet (Anything above the white line). One of those solutions would be to use&#xa;clear nailpolish (Not Recommended). This acts as a moisture barrier. Properly (Preferrably) You should consider purchasing&#xa;a PCB sealer for a proper and reliable seal.&#xa;&#xa;Manual Control Operation:------------------------------------------------------------------&#xa;- The Manual Control window allows the user to control components individually. Note that the software will not allow the&#xa;user to enable the pump without first enabling (One) or more solenoids. While Manual Control is enabled, Regular operation&#xa;of the device is paused. Once disabled, the device will resume normal (Auto Watering) operation. In this window. You will &#xa;see two buttons that are not related to conponents on the board. These buttons are &quot;STOP&quot; and &quot;E Stop Reset&quot; For more &#xa;information regarding these controls, See &quot;EStop Functions&quot; below.&#xa;&#xa;EStop Functions:------------------------------------------------------------------------------&#xa;- Integrated into the system is an Emergency Stop function. This can be used as a fail safe to quickly and promptly stop &#xa;all actions the board can perform in the event of a runaway pump. Enabling Manual Control has the same effect as pressing &#xa;the EStop button how ever, The EStop button has a far higher priority than enabling Manual Control. EStop completely cut&apos;s &#xa;off operation of any functions the board can perform from the root of the device. EStop will not damage the device in any way.&#xa;In the event of any actions within Manual Control or standard operation that seem &quot;Frozen&quot; or &quot;Stuck&quot; Enabling EStop and Reset&#xa;will restore functionallity to the device. As of now, There are no pump Timeouts that disable the pump if it has been running&#xa;too long. Doing this will consume more resources than the board is optimized for. That feature is being considered for implementation&#xa;in the future.&#xa;&#xa;Plant To Board Mapping:---------------------------------------------------------------------&#xa;A0: Plant 1&#xa;A1: Plant 2&#xa;A2: Plant 3&#xa;A3: Plant 4"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
